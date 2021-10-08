@@ -67,6 +67,7 @@ func main() {
 
 	resp, err = client.R().
 		SetHeader("content-type", "application/json-patch+json").
+		SetAuthToken(tokenResponse.Value).
 		SetBody(answer{
 			FirstName: "Mrdjan",
 			LastName:  "Mrksic",
@@ -79,7 +80,8 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Println(resp.Body())
+	log.Println(string(resp.Body()))
+
 }
 
 var litteral2MorseCode = map[rune]string{
