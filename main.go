@@ -78,6 +78,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	log.Println(resp.Body())
 }
 
 var litteral2MorseCode = map[rune]string{
